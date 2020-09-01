@@ -3,7 +3,12 @@
     <h1>Sign Up Form</h1>
     <b-container>
       <b-form @submit="onSubmit" @reset="onReset" v-if="show" class="form">
-        <b-form-group id="input-group-1" label="Firstname:" label-for="input-1">
+        <b-form-group
+          id="input-group-1"
+          label="Firstname"
+          label-for="input-1"
+          class="label"
+        >
           <b-form-input
             id="input-1"
             v-model="form.firstname"
@@ -14,27 +19,44 @@
 
         <b-form-group
           id="input-group-2"
-          label="Your Lastname:"
+          label="Lastname"
           label-for="input-2"
+          class="label"
         >
           <b-form-input id="input-2" v-model="form.lastname" required>
           </b-form-input>
         </b-form-group>
         <b-form-group
           id="input-group-1"
-          label="Email address:"
+          label="Email address"
           label-for="input-3"
+          class="label"
         >
-          <b-form-input id="input-1" v-model="form.email" type="email" required>
+          <b-form-input
+            id="input-3"
+            v-model="form.email"
+            type="email"
+            required
+          >
           </b-form-input>
         </b-form-group>
         <b-form-group
           id="input-group-1"
-          label="Date of birth:"
+          label="Password"
           label-for="input-4"
+          class="label"
+        >
+          <b-form-input id="input-4" v-model="form.password" type="text" required>
+          </b-form-input>
+        </b-form-group>
+        <b-form-group
+          id="input-group-1"
+          label="Date of birth"
+          label-for="input-5"
+          class="label"
         >
           <b-form-datepicker
-            id="input-4"
+            id="input-5"
             v-model="form.dateOfBirth"
             type="date"
             required
@@ -48,7 +70,6 @@
               day: 'numeric',
             }"
             :label-no-date-selected="'Select a date'"
-            :label-help="{}"
           ></b-form-datepicker>
         </b-form-group>
         <b-button class="submit-btn" type="submit" variant="primary"
@@ -65,7 +86,7 @@
 <script>
 // import Home from "./Home.vue";
 export default {
-  name: "Form",
+  name: 'Form',
   components: {},
   props: {
     msg: String,
@@ -73,10 +94,11 @@ export default {
   data() {
     return {
       form: {
-        email: "",
-        firstname: "",
-        lastname: "",
-        dateOfBirth: "",
+        email: '',
+        firstname: '',
+        lastname: '',
+        dateOfBirth: '',
+        password: '',
       },
       show: true,
       max: new Date(),
@@ -85,15 +107,20 @@ export default {
   methods: {
     onSubmit(evt) {
       evt.preventDefault();
-      alert(JSON.stringify(this.form));
+      this.$http
+        .post('users', this.form)
+        .then((res) => {
+          console.log({ res });
+        })
+        .catch((err) => console.log({ err }));
       // Post info on Node serve with vue resource
     },
     onReset(evt) {
       evt.preventDefault();
       // Reset our form values
-      this.form.email = "";
-      this.form.firstname = "";
-      this.form.lastname = "";
+      this.form.email = '';
+      this.form.firstname = '';
+      this.form.lastname = '';
       this.form.dateOfBirth = null;
       // Trick to reset/clear native browser form validation state
       this.show = false;
@@ -125,5 +152,8 @@ h1 {
 }
 .reset-btn {
   margin-left: 10px;
+}
+.label {
+  text-align: left;
 }
 </style>
