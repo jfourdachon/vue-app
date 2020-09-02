@@ -32,12 +32,7 @@
           label-for="input-3"
           class="label"
         >
-          <b-form-input
-            id="input-3"
-            v-model="form.email"
-            type="email"
-            required
-          >
+          <b-form-input id="input-3" v-model="form.email" type="email" required>
           </b-form-input>
         </b-form-group>
         <b-form-group
@@ -46,7 +41,12 @@
           label-for="input-4"
           class="label"
         >
-          <b-form-input id="input-4" v-model="form.password" type="text" required>
+          <b-form-input
+            id="input-4"
+            v-model="form.password"
+            type="text"
+            required
+          >
           </b-form-input>
         </b-form-group>
         <b-form-group
@@ -84,13 +84,9 @@
 </template>
 
 <script>
-// import Home from "./Home.vue";
+import axios from '@/axios';
 export default {
   name: 'Form',
-  components: {},
-  props: {
-    msg: String,
-  },
   data() {
     return {
       form: {
@@ -105,15 +101,13 @@ export default {
     };
   },
   methods: {
+    async createUser () {
+      await axios.post('user/register', this.form);
+    },
     onSubmit(evt) {
       evt.preventDefault();
-      this.$http
-        .post('users', this.form)
-        .then((res) => {
-          console.log({ res });
-        })
-        .catch((err) => console.log({ err }));
       // Post info on Node serve with vue resource
+      this.createUser().catch((err) => console.log({ err }));
     },
     onReset(evt) {
       evt.preventDefault();
