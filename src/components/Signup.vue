@@ -86,7 +86,7 @@
 <script>
 import axios from '@/axios';
 export default {
-  name: 'SignupForm',
+  name: 'Signup',
   data() {
     return {
       form: {
