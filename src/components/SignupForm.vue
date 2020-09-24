@@ -1,6 +1,6 @@
 <template>
   <div class="main-form">
-    <h1>Sign Up Form</h1>
+    
     <b-container>
       <b-form @submit="onSubmit" @reset="onReset" v-if="show" class="form">
         <b-form-group
@@ -44,7 +44,7 @@
           <b-form-input
             id="input-4"
             v-model="form.password"
-            type="text"
+            type="password"
             required
           >
           </b-form-input>
@@ -86,7 +86,7 @@
 <script>
 import axios from '@/axios';
 export default {
-  name: 'Form',
+  name: 'SignupForm',
   data() {
     return {
       form: {
@@ -127,27 +127,4 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-.main-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-h1 {
-  margin-bottom: 70px;
-}
-.form {
-  width: 50%;
-  margin: auto;
-}
-.submit-btn {
-  margin-right: 10px;
-}
-.reset-btn {
-  margin-left: 10px;
-}
-.label {
-  text-align: left;
-}
-</style>
+<style scoped lang="css" src="../assets/css/form.css"></style>

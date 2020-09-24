@@ -1,0 +1,59 @@
+#main-colum-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  transform: skew(-20deg);
+  width: 25%;
+  margin-bottom: 20px;
+}
+.title-signup {
+  border-right: 1px solid grey;
+  padding-right: 10px;
+  cursor: pointer;
+}
+.title-signin {
+  border-left: 1px solid grey;
+  padding-left: 10px;
+  cursor: pointer;
+}
+h2 {
+  transform: skew(20deg);
+  padding-top: 10px;
+  color: rgba(90, 93, 99, 0.5);
+}
+.isSigninActive {
+  border-left: 2px solid #42b983;
+}
+.isSignupActive {
+  border-right: 2px solid #42b983;
+}
+.isSigninActive > h2,
+.isSignupActive > h2 {
+  color: #42b983;
+  font-weight: bold;
+}
+.bounce1-enter-active,
+.bounce2-enter-active {
+  animation: bounce-in 0.5s;
+}
+.bounce1-leave-active,
+.bounce2-leave-active {
+  animation: bounce-in 0.5s reverse;
+}
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

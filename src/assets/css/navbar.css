@@ -1,0 +1,25 @@
+.relative-row {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 2rem;
+}
+
+.centered-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.btn-green {
+  background-color: #2cfa9d;
+  color: whitesmoke;
+  font-weight: bold;
+}
+
+.btn-green:hover {
+  box-shadow: 0 0 5px whitesmoke;
+  transform: translateY(-2px);
+}
