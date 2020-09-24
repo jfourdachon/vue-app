@@ -1,7 +1,7 @@
 <template>
   <div>
-    <b-navbar toggleable="lg" type="dark" variant="dark" class="relative-row">
-      <b-navbar-brand href="#">All tours</b-navbar-brand>
+    <b-navbar type="dark" variant="dark" class="relative-row">
+      <b-navbar-brand class="home" href="#">All tours</b-navbar-brand>
       <b-img
         v-bind="mainProps"
         center

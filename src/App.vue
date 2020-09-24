@@ -1,26 +1,20 @@
 <template>
   <div id="app">
     <div id="main">
-      <navbar class="navbar" />
+      <app-nav-bar class="navbar" />
 
       <!-- <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> -->
-      <prout class="footer" />
+      <app-footer class="footer" />
       <router-view />
     </div>
   </div>
 </template>
 
 <script>
-import Navbar from '@/components/Navbar.vue';
-import Prout from '@/components/Footer.vue';
 
 export default {
   name: 'App',
-  components: {
-    Navbar,
-    Prout,
-  },
 };
 </script>
 <style lang="scss">

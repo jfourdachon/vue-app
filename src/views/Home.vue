@@ -1,6 +1,6 @@
 <template>
   <div id="main-colum-center">
-    <div id="title">
+    <!-- <div id="title">
       <div
         v-bind:class="{ isSignupActive: isSignupActive, 'title-signup': true }"
         @click="showSignUp"
@@ -20,20 +20,23 @@
     </transition>
     <transition name="bounce1" mode="out-in">
       <signin-form v-show="isSigninActive" key="isSigninActive" />
-    </transition>
-  </div>
+    </transition>-->
+      <tours-overview />
+  </div> 
 </template>
 
 <script>
 // @ is an alias to /src
-import SigninForm from '@/components/SigninForm.vue';
-import SignupForm from '@/components/SignupForm.vue';
+// import SigninForm from '@/components/SigninForm.vue';
+// import SignupForm from '@/components/SignupForm.vue';
+import ToursOverview from '@/layouts/ToursOverview.vue'
 
 export default {
   name: 'Home',
   components: {
-    SigninForm,
-    SignupForm,
+    // SigninForm,
+    // SignupForm,
+    ToursOverview
   },
   data() {
     return {
