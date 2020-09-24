@@ -1,0 +1,28 @@
+.main-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+}
+.form {
+  width: 100%;
+  margin: auto;
+}
+.submit-btn {
+  margin-right: 10px;
+  background-color: #2cfa9d;
+  border-color:#2cfa9d;
+}
+.reset-btn {
+  margin-left: 10px;
+  background-color: #353535;
+  border-color:#2cfa9d;
+}
+.submit-btn:hover, .reset-btn:hover {
+  box-shadow: 0 0 10px whitesmoke;
+}
+.label {
+  text-align: left;
+  color: #42b983;
+}
