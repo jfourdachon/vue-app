@@ -1,22 +1,27 @@
 <template>
   <div id="app">
-    <navbar class="navbar"/>
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div id="main">
+      <navbar class="navbar" />
+
+      <!-- <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link> -->
+      <prout class="footer" />
+      <router-view />
     </div>
-    <router-view/>
   </div>
 </template>
 
 <script>
 import Navbar from '@/components/Navbar.vue';
+import Prout from '@/components/Footer.vue';
+
 export default {
   name: 'App',
   components: {
-    Navbar
-  }
-}
+    Navbar,
+    Prout,
+  },
+};
 </script>
 <style lang="scss">
 #app {
@@ -24,27 +29,29 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  background-color: #252424;
+  // color: #2c3e50;
+  // background-color: #252424;
   height: 100vh;
-  padding: 20px;
+  margin: 3rem;
 }
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+#main {
+  background-color: #f7f7f7;
+  height: calc(100% - 5rem);
+  position: relative;
 }
 
 .navbar {
-  width: 100%;;
+  width: 100%;
   height: 80px;
+  padding: 0;
+  margin-bottom: 1rem;
 }
+
+.footer {
+  position: absolute;
+  bottom: 0%;
+  left: 1rem;
+}
+
 </style>

@@ -1,21 +1,32 @@
 <template>
   <div>
-    <b-navbar toggleable="lg" type="dark" variant="dark">
+    <b-navbar toggleable="lg" type="dark" variant="dark" class="relative-row">
       <b-navbar-brand href="#">All tours</b-navbar-brand>
       <b-img
         v-bind="mainProps"
         center
         src="@/assets/img/logo-white.png"
         alt="Center image"
+        class="centered-logo"
       ></b-img>
       <b-navbar-nav>
         <b-nav-item
-          ><b-button pill variant="outline-success" href="#" :pressed="true" class="button"
+          ><b-button
+            pill
+            variant="green"
+            href="#"
+            :pressed="true"
+            class="button"
             >Login</b-button
           ></b-nav-item
         >
         <b-nav-item
-          ><b-button pill variant="outline-success" href="#" :pressed="true" class="button"
+          ><b-button
+            pill
+            variant="green"
+            href="#"
+            :pressed="true"
+            class="button"
             >Sign up</b-button
           ></b-nav-item
         >
@@ -35,8 +46,4 @@ export default {
 };
 </script>
 
-<style scoped>
-  .button:hover {
-    transform: scale(1.07)
-  }
-</style>
+<style scoped lang="css" src="../assets/css/navbar.css"></style>

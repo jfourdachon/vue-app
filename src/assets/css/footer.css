@@ -1,0 +1,11 @@
+.row {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1.5rem;
+}
+p {
+  color: grey;
+  opacity: 0.5;
+}
