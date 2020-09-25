@@ -1,5 +1,5 @@
 <template>
-  <div id="main-colum-center">
+  <div>
     <!-- <div id="title">
       <div
         v-bind:class="{ isSignupActive: isSignupActive, 'title-signup': true }"

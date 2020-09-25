@@ -26,7 +26,6 @@
             variant="green"
             href="#"
             :pressed="true"
-            class="button"
             >Sign up</b-button
           ></b-nav-item
         >
@@ -47,3 +46,4 @@ export default {
 </script>
 
 <style scoped lang="css" src="../assets/css/navbar.css"></style>
+<style scoped lang="css" src="../assets/css/common.css"></style>
