@@ -11,14 +11,10 @@
   font-size: 1.75rem;
   text-align: right;
   position: absolute;
-  bottom: 1rem;
-  right: 2rem;
-  width: 60%;
+  top: 13rem;
+  right: 1rem;
+  width: 70%;
   z-index: 10;
-}
-
-.header {
-  position: relative;
 }
 
 span {
@@ -27,4 +23,14 @@ span {
   box-decoration-break: clone;
   background-image: linear-gradient( to bottom right, rgba(125, 213, 111, 0.85), rgba(40, 180, 135, 0.85) );
   color: whitesmoke;
+}
+
+.summary {
+  font-family: 'Baloo Tammudu 2', cursive;
+  font-style: italic;
+  font-size: 1.1rem;
+}
+
+.upper {
+  font-weight: bold;
 }
