@@ -4,8 +4,20 @@ import Vue from 'vue'
 import './plugins/bootstrap-vue'
 import App from './App.vue'
 import router from './router'
+import Navbar from './components/Navbar.vue'
+import Footer from './components/Footer.vue'
+
 
 Vue.config.productionTip = false;
+
+// Use componets
+Vue.component('app-nav-bar', Navbar);
+Vue.component('app-footer', Footer);
+Vue.filter('toUpperCase', function (value) {
+  if (!value) return ''
+  value = value.toString()
+  return value.toUpperCase()
+})
 
 new Vue({
   router,

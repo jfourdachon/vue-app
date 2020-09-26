@@ -1,0 +1,21 @@
+.btn-green {
+  background-image: linear-gradient(to right bottom, #7dd56f, #28b487);
+  color: whitesmoke;
+  font-weight: bold;
+}
+
+.btn-green-card {
+  background-image: linear-gradient(to right bottom, #7dd56f, #28b487);
+  opacity: 0.7;
+}
+
+.image-cover {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  
+}
+
+.relative {
+  position: relative;
+}

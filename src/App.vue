@@ -1,26 +1,17 @@
 <template>
   <div id="app">
     <div id="main">
-      <navbar class="navbar" />
-
-      <!-- <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> -->
-      <prout class="footer" />
+      <app-nav-bar class="navbar" />
       <router-view />
+      <app-footer class="footer" />
     </div>
   </div>
 </template>
 
 <script>
-import Navbar from '@/components/Navbar.vue';
-import Prout from '@/components/Footer.vue';
 
 export default {
   name: 'App',
-  components: {
-    Navbar,
-    Prout,
-  },
 };
 </script>
 <style lang="scss">
@@ -28,10 +19,9 @@ export default {
   font-family: 'Comfortaa', cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   // color: #2c3e50;
   // background-color: #252424;
-  height: 100vh;
+  // height: 100;
   margin: 3rem;
 }
 
@@ -49,9 +39,9 @@ export default {
 }
 
 .footer {
-  position: absolute;
-  bottom: 0%;
-  left: 1rem;
+  // position: absolute;
+  // bottom: 0%;
+  // left: 1rem;
 }
 
 </style>

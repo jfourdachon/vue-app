@@ -1,9 +1,5 @@
 .relative-row {
   position: relative;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 0 2rem;
 }
 
 .centered-logo {
@@ -19,7 +15,12 @@
   font-weight: bold;
 }
 
-.btn-green:hover {
+.home {
+  padding: 5px;
+  border-radius: 50rem;
+}
+
+.btn-green:hover, .home:hover {
   box-shadow: 0 0 5px whitesmoke;
   transform: translateY(-2px);
 }
