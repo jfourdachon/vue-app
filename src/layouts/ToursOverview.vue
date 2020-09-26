@@ -15,6 +15,7 @@
           :stops="tour.locations.length"
           :date="tour.startDates[0]"
           :startLocation="tour.startLocation.description"
+          :slug="tour.slug"
         />
       </b-col>
     </b-row>
@@ -38,12 +39,9 @@ export default {
   mounted: async function () {
     const result = await axios.get("tours");
     this.tours = result.data.data;
-    console.log(this.tours.data);
   },
   methods: {
-    click(val) {
-      console.log(val);
-    },
+
   },
 };
 </script>
