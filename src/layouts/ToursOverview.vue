@@ -1,7 +1,7 @@
 <template>
   <b-container fluid class="mt-5">
-    <b-row>
-      <b-col sm="10" md="6" xl="4" v-for="tour in tours.data" :key="tour.id" class="my-4 px-4">
+    <b-row align-h="center">
+      <b-col md="10" lg="6" xl="4" v-for="tour in tours.data" :key="tour.id" class="my-4 px-4">
         <tour-card
           :name="tour.name"
           :image="tour.imageCover"
