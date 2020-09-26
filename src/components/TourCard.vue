@@ -1,5 +1,6 @@
 <template>
   <b-card class="card h-100" no-body>
+    <div class="relative">
     <b-overlay :show="true" bg-color="#28b487" opacity="0.5" class="overlay">
       <template v-slot:overlay><div /></template>
       <b-card-img-lazy
@@ -10,6 +11,7 @@
     <b-card-title class="card-title">
       <span>{{ name }}</span>
     </b-card-title>
+    </div>
     <b-container class="px-4 h-100">
       <b-col class="mt-2 upper">
         {{ difficulty | toUpperCase }} - {{ duration }} DAYS TOUR
