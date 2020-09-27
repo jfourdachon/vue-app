@@ -9,7 +9,6 @@
 </template>
 
 <script>
-
 export default {
   name: 'App',
 };
@@ -19,15 +18,13 @@ export default {
   font-family: 'Comfortaa', cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  // color: #2c3e50;
-  // background-color: #252424;
-  // height: 100;
   margin: 3rem;
 }
 
 #main {
   background-color: #f7f7f7;
   height: calc(100% - 5rem);
+  min-height: 80vh;
   position: relative;
 }
 
@@ -43,5 +40,4 @@ export default {
   // bottom: 0%;
   // left: 1rem;
 }
-
 </style>

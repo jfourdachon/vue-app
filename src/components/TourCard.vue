@@ -1,16 +1,16 @@
 <template>
   <b-card class="card h-100" no-body>
     <div class="relative">
-    <b-overlay :show="true" bg-color="#28b487" opacity="0.5" class="overlay">
-      <template v-slot:overlay><div /></template>
-      <b-card-img-lazy
-        :src="require(`@/assets/img/tours/${image}`)"
-        class="w-100 h-100"
-      />
-    </b-overlay>
-    <b-card-title class="card-title">
-      <span>{{ name }}</span>
-    </b-card-title>
+      <b-overlay :show="true" bg-color="#28b487" opacity="0.5" class="overlay">
+        <template v-slot:overlay><div /></template>
+        <b-card-img-lazy
+          :src="require(`@/assets/img/tours/${image}`)"
+          class="w-100 h-100"
+        />
+      </b-overlay>
+      <b-card-title class="card-title">
+        <span>{{ name }}</span>
+      </b-card-title>
     </div>
     <b-container class="px-4 h-100">
       <b-col class="mt-2 upper">
@@ -46,7 +46,9 @@
         </b-col>
         <b-col align-self="center" cols="3">
           <b-row align-h="end">
-            <b-button pill variant="green" href="#">Details</b-button>
+            <b-button pill variant="green" href="#">
+              <router-link :to="{ name: 'TourDetails', params: { name: slug }}">Details</router-link></b-button
+            >
           </b-row>
         </b-col>
       </b-row>
@@ -76,11 +78,11 @@ export default {
     'date',
     'stops',
     'startLocation',
+    'slug',
   ],
   mounted: function() {
     const date = new Date(this.date);
     this.globalDate = moment(date).format('YYYY MMMM');
-    console.log(this.globalDate);
   },
 };
 </script>
