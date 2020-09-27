@@ -6,7 +6,7 @@
       src="@/assets/img/logo-green.png"
       alt="Footer logo"
     ></b-img>
-    <p>Powered by Julien Fourdachon</p>
+    <p>© 2020 by Julien Fourdachon</p>
   </div>
 </template>
 
