@@ -12,7 +12,7 @@
         <span>{{ name }}</span>
       </b-card-title>
     </div>
-    <b-container class="px-4 h-100">
+    <b-container class="px-4 h-100 my-4">
       <b-col class="mt-2 upper">
         {{ difficulty | toUpperCase }} - {{ duration }} DAYS TOUR
       </b-col>
@@ -47,7 +47,7 @@
         <b-col align-self="center" cols="3">
           <b-row align-h="end">
             <b-button pill variant="green" href="#">
-              <router-link :to="{ name: 'TourDetails', params: { name: slug }}">Details</router-link></b-button
+              <router-link class="link" :to="{ name: 'TourDetails', params: { name: slug }}">Details</router-link></b-button
             >
           </b-row>
         </b-col>

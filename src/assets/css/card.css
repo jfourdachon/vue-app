@@ -38,3 +38,9 @@ span {
 .upper {
   font-weight: bold;
 }
+
+.link {
+  text-decoration: none;
+  color: whitesmoke;
+  border: transparent;
+}
