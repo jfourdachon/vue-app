@@ -1,7 +1,7 @@
 <template>
   <b-card class="card h-100" no-body>
     <div class="relative">
-      <b-overlay :show="true" bg-color="#28b487" opacity="0.5" class="overlay">
+      <b-overlay :show="true" bg-color="#28b487" opacity="0.2" class="overlay">
         <template v-slot:overlay><div /></template>
         <b-card-img-lazy
           :src="require(`@/assets/img/tours/${image}`)"
@@ -46,9 +46,12 @@
         </b-col>
         <b-col align-self="center" cols="3">
           <b-row align-h="end">
-            <b-button pill variant="green" href="#">
-              <router-link class="link" :to="{ name: 'TourDetails', params: { name: slug }}">Details</router-link></b-button
+            <router-link
+              class="link"
+              :to="{ name: 'TourDetails', params: { name: slug } }"
             >
+              <b-button pill variant="green">Details</b-button>
+            </router-link>
           </b-row>
         </b-col>
       </b-row>
