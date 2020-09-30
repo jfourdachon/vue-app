@@ -35,9 +35,4 @@ export default {
   margin-bottom: 1rem;
 }
 
-.footer {
-  // position: absolute;
-  // bottom: 0%;
-  // left: 1rem;
-}
 </style>

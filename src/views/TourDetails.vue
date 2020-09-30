@@ -4,7 +4,7 @@
         <b-overlay
           :show="true"
           bg-color="#28b487"
-          opacity="0.5"
+          opacity="0.2"
           class="overlay"
         >
           <template v-slot:overlay><div /></template>
@@ -33,76 +33,112 @@
           </b-row>
         </b-col>
       </b-row>
-    <b-row class="description m-0">
-      <b-col class="py-5 description-left" lg="6" md="12">
-        <b-col class="description-left-content">
-          <h3 class="mb-5">Quick facts</h3>
-          <b-col offset="3">
-            <b-row>
-              <b-icon
-                icon="calendar2-event-fill"
-                font-scale="1.3"
-                variant="success"
-              ></b-icon>
-              <b-row class="text-secondary label pl-4 w-25">
-                Next Date
+      <b-row class="description m-0">
+        <b-col class="py-5 description-left" lg="6" md="12">
+          <b-col class="description-left-content">
+            <h3 class="mb-5">Quick facts</h3>
+            <b-col offset="3">
+              <b-row>
+                <b-icon
+                  icon="calendar2-event-fill"
+                  font-scale="1.3"
+                  variant="success"
+                ></b-icon>
+                <b-row class="text-secondary label pl-4 w-25">
+                  Next Date
+                </b-row>
+                <p class="text-secondary pl-5">{{ globalDate }}</p>
               </b-row>
-              <p class="text-secondary pl-5">{{ globalDate }}</p>
-            </b-row>
-            <b-row>
-              <b-icon
-                icon="graph-up"
-                font-scale="1.3"
-                variant="success"
-              ></b-icon>
-              <b-row class="text-secondary label pl-4  w-25">DIFFICULTY</b-row>
-              <p class="text-secondary pl-5 description-left-value">
-                {{ tour.data.difficulty }}
-              </p>
-            </b-row>
-            <b-row>
-              <b-icon icon="person" font-scale="1.3" variant="success"></b-icon>
-              <b-row class="text-secondary label pl-4 w-25">
-                PARTICIPANTS
+              <b-row>
+                <b-icon
+                  icon="graph-up"
+                  font-scale="1.3"
+                  variant="success"
+                ></b-icon>
+                <b-row class="text-secondary label pl-4  w-25"
+                  >DIFFICULTY</b-row
+                >
+                <p class="text-secondary pl-5 description-left-value">
+                  {{ tour.data.difficulty }}
+                </p>
               </b-row>
-              <p class="text-secondary pl-5 description-left-value">
-                {{ tour.data.maxGroupSize }}
-              </p>
-            </b-row>
-            <b-row>
-              <b-icon
-                icon="calendar2-event-fill"
-                font-scale="1.3"
-                variant="success"
-              ></b-icon>
-              <b-row class="text-secondary label pl-4  w-25">
-                Rating
+              <b-row>
+                <b-icon
+                  icon="person"
+                  font-scale="1.3"
+                  variant="success"
+                ></b-icon>
+                <b-row class="text-secondary label pl-4 w-25">
+                  PARTICIPANTS
+                </b-row>
+                <p class="text-secondary pl-5 description-left-value">
+                  {{ tour.data.maxGroupSize }}
+                </p>
               </b-row>
-              <p class="text-secondary pl-5 description-left-value">
-                {{ tour.data.ratingsAverage }} / 5
-              </p>
-            </b-row>
+              <b-row>
+                <b-icon
+                  icon="calendar2-event-fill"
+                  font-scale="1.3"
+                  variant="success"
+                ></b-icon>
+                <b-row class="text-secondary label pl-4  w-25">
+                  Rating
+                </b-row>
+                <p class="text-secondary pl-5 description-left-value">
+                  {{ tour.data.ratingsAverage }} / 5
+                </p>
+              </b-row>
+            </b-col>
+            <h3 class="my-4">Your guides</h3>
+            <b-col
+              offset="3"
+              lg="9"
+              v-for="guide in tour.data.guides"
+              :key="guide.id"
+            >
+              <b-row align-v="center" class="mb-3">
+                <b-img
+                  rounded="circle"
+                  width="50"
+                  alt="Guide picture"
+                  :src="require(`@/assets/img/users/${guide.photo}`)"
+                />
+                <span
+                  v-if="guide.role === 'lead-guide'"
+                  class="text-secondary label ml-3"
+                  >LEAD GUIDE</span
+                >
+                <span v-else class="text-secondary label ml-3">TOUR GUIDE</span>
+                <b-col class="text-secondary" offset="1">{{
+                  guide.name
+                }}</b-col>
+              </b-row>
+            </b-col>
           </b-col>
-          <h3 class="my-4">Your guides</h3>
-          <b-col offset="3" lg="9" v-for="guide in tour.data.guides" :key="guide.id">
-            <b-row align-v="center" class="mb-3">
-              <b-img rounded="circle" width="50" alt="Guide picture" :src="require(`@/assets/img/users/${guide.photo}`)" />
-              <span v-if="guide.role === 'lead-guide'" class="text-secondary label ml-3">LEAD GUIDE</span>
-              <span v-else  class="text-secondary label ml-3">TOUR GUIDE</span>
-              <b-col class="text-secondary" offset="1">{{guide.name}}</b-col>
+        </b-col>
+        <b-col class="description-right" lg="6" md="12">
+          <b-col offset-md="2" class="description-right-content">
+            <h3 class="mb-5">About {{ tour.data.name }} Tour</h3>
+            <b-row class="px-5 mx-5 text-secondary paragraph">
+              {{ tour.data.description }}
             </b-row>
           </b-col>
         </b-col>
-      </b-col>
-      <b-col class="description-right" lg="6" md="12">
-        <b-col offset-md="2" class="description-right-content">
-          <h3 class="mb-5">About {{tour.data.name}} Tour</h3>
-          <b-row class="px-5 mx-5 text-secondary paragraph">
-            {{tour.data.description}}
-          </b-row>
+      </b-row>
+      <b-row class="pictures m-0" cols="12">
+        <b-col
+          class="p-0"
+          md="4"
+          v-for="(image, index) in tour.data.images"
+          :key="index"
+        >
+          <b-card-img-lazy
+            :src="require(`@/assets/img/tours/${image}`)"
+            v-bind:class="`index-${index}`"
+            class="pic"
+          />
         </b-col>
-      </b-col>
-    </b-row>
+      </b-row>
   </div>
 </template>
 
